@@ -88,9 +88,10 @@ public class Optimizer {
 			int estremo_sinistro_iniziale = rettangolo_da_posizionare.margine_sinistro;
 			int estremo_destro_iniziale = rettangolo_da_posizionare.margine_destro;
 			
-			for(int estremo : estremi_rect_intersecanti) {
-				
-			}
+//			for(int estremo : estremi_rect_intersecanti) {
+//				rettangolo_da_posizionare.
+//				Mossa vai_a_sinistra = new Mossa("sinistra", estremo, );
+//			}
 		}
 	}
 	

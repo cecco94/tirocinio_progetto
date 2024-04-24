@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public class MainClass {
 
@@ -6,29 +5,25 @@ public class MainClass {
 //	private Configuration configuration;
 
 	
-	public static void main(String[] args) {
-		//leggi il file e prendi il piano
-		//leggi il file e prendi la configurazione		
+	public static void main(String[] args) throws RectImpossibleException{
 		
+		float max_altezza_fornita = 4.8f; 
 		
-		ArrayList<Rettangolo> rettangoli = new ArrayList<>();
-		Rettangolo r1 = new Rettangolo(0, 10, 10, 100); //h=1
-		rettangoli.add(r1);
+		Rettangolo r0 = new Rettangolo(0, 10, 15, 0, max_altezza_fornita);
+		Rettangolo r1 = new Rettangolo(0, 10, 10, 30, max_altezza_fornita);	
 		
-		Rettangolo r2 = new Rettangolo(3, 10, 40, 100); //h=2
-		rettangoli.add(r2);
+		Rettangolo[] soluzione = OptimizerDueMacchine.ottimizza_due_macchine(r0, r1, max_altezza_fornita);
 		
-		Rettangolo r3 = new Rettangolo(2, 8, 18, 100);  //h=3
-		rettangoli.add(r3);
-
-		System.out.println(r2.intersect(r1));
+		if(soluzione == null) {
+			System.out.println("piano impossibile");
+		}
 		
-//		Optimizer opt = new Optimizer(rettangoli);
-//		opt.posiziona_rect_piu_costoso();
-//
-//		opt.intersezioni_con_rect_posizionati(r1);
-		
+		else {
+			System.out.println(soluzione[0].margine_sinistro + ", " + soluzione[0].margine_destro + " area = " + soluzione[0].area + " altezza = " + soluzione[0].altezza 
+					+ " // " + soluzione[1].margine_sinistro + ", " + soluzione[1].margine_destro + " area = " + soluzione[1].area + " altezza = " + soluzione[1].altezza );
+		}
 	}
+	
 
 }
 
