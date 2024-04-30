@@ -1,3 +1,4 @@
+package vecchio_algo;
 
 public class Mossa {
 

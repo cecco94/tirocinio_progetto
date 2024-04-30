@@ -5,16 +5,14 @@ public class Vehicle {
 	float initial_charge;
 	float min_charge_rate, max_charge_rate;
 	
-	Plug[] avaible_plugs;		//ogni macchina ha almeno una colonnina disponibie
-	Plan plan; 					//ogni macchina ha 
-	public Vehicle(int id, float initial_charge, float min_charge_rate, float max_charge_rate, Plug[] avaible_plugs, Plan plan) {
+	Plug plug;		//ogni macchina ha almeno una colonnina disponibie
+	
+	public Vehicle(int id, float initial_charge, float min_charge_rate, float max_charge_rate, Plug plug) {
 		this.id = id;
 		this.initial_charge = initial_charge;
 		this.min_charge_rate = min_charge_rate;
 		this.max_charge_rate = max_charge_rate;
-		this.avaible_plugs = avaible_plugs;
-		this.plan = plan;
-		
+		this.plug = plug;
 	}
 		
 
